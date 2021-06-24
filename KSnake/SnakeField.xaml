@@ -1,0 +1,68 @@
+﻿<Window x:Class="KSnake.SnakeField"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KSnake"
+        mc:Ignorable="d"
+        Title="Snake" Height="600" Width="855" SizeToContent="Manual" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Background="#FF1F9D25"  >
+
+
+    <Canvas x:Name="Snake_Game" Background="GreenYellow"  Margin="0,85,6,2" HorizontalAlignment="Stretch"  >
+       
+        <!--Відображення панелі меню-->
+        <Menu Height="25" Canvas.Top="-85" Background="Green" Width="855" KeyboardNavigation.TabNavigation="Cycle">
+
+            <MenuItem Header="  Головне вікно"  Width="115" FontFamily="Times New Roman" FontSize="14" Foreground="#FFFFFBFB" 
+                      Height="24" Click="MenuItem_Click" Padding="0,2,0,0" >
+                <MenuItem.Icon>
+                    <Image Source="D:\Навчання\Visual (education)\KSnake\Pictures\Menu.png"  Margin="-18,-5,-26,-5"/>
+                </MenuItem.Icon>
+            </MenuItem>
+            <Separator Height="25" Width="10"/>
+            <MenuItem Header=" Пауза" Width="65" Foreground="#FFF9F9F9" FontSize="14" FontFamily="Times New Roman"
+                      Height="24" Click="Pause_Click" HorizontalContentAlignment="Left" Padding="0,2,0,0" >
+                <MenuItem.Icon>
+                    <Image Source="D:\Навчання\Visual (education)\KSnake\Pictures\Pause.png"  Margin="-15,-2,-20,-1"/>
+                </MenuItem.Icon>
+            </MenuItem>
+            <Separator Height="25" Width="10"/>
+            <MenuItem Header=" Продовжити" Width="105" Foreground="#FFF9F9F9" FontSize="14" FontFamily="Times New Roman"  
+                      Height="24" Click="Continue_Click" Padding="0,2,0,0" >
+                <MenuItem.Icon>
+                    <Image Source="D:\Навчання\Visual (education)\KSnake\Pictures\Continue.png"  Margin="-15,-1,-20,-1"/>
+                </MenuItem.Icon>
+            </MenuItem>
+            <Separator Height="25" Width="10"/>
+            <MenuItem Header=" Опції"  Width="65" FontFamily="Times New Roman" FontSize="14" 
+                      Foreground="White" Height="24"  Padding="0,2,0,0" >
+                <MenuItem.Icon>
+                    <Image Source="D:\Навчання\Visual (education)\KSnake\Pictures\Option1.png"  Margin="-15,-1,-20,-1"/>
+                </MenuItem.Icon>
+                <Slider x:Name="Slider" Width="110" Height="25" Minimum="1" Maximum="2" TickFrequency="0.5" IsSnapToTickEnabled="True"
+                        TickPlacement="BottomRight" ValueChanged="Slider_ValueChanged" />
+                <Label Content="1x       1.5x       2x" Width="115" Height="25"/>
+
+            </MenuItem>
+            <Separator Height="25" Width="5"/>
+            <MenuItem x:Name="Sound" Header="  Вимкнути музику" Click="Sound_Click"  Width="140" FontFamily="Times New Roman" FontSize="14" 
+                      Foreground="White" Height="24"  Padding="0,2,0,0" >
+                <MenuItem.Icon>
+                    <Image Source="D:\Навчання\Visual (education)\KSnake\Pictures\IconSounds.png"  Margin="-15,-1,-27,0" 
+                           Height="20" VerticalAlignment="Top"/>
+                </MenuItem.Icon>
+            </MenuItem>
+
+        </Menu>
+        <!--Відображення текстових надписів-->
+        <Label x:Name="Level" Height="25" Canvas.Left="700" Canvas.Top="-86" Width="155" FontFamily="Times New Roman" 
+               FontSize="14" Foreground="White"/>
+        <Label x:Name="LevelAnimation" Content="Новий рівень" Visibility="Hidden" Height="90" Canvas.Left="290" Canvas.Top="159" 
+               Width="280" Foreground="#FFDC1A1A" FontFamily="Monotype Corsiva" FontSize="48"/>
+        <Label Name="EatApple"  Height="40" Canvas.Left="10" Canvas.Top="-53" Width="280" FontSize="22" FontFamily="Monotype Corsiva" FontWeight="Bold"  />
+        <Label Name="TimeEat" Height="40" Canvas.Left="600" Canvas.Top="-53" Width="250" FontSize="22" FontFamily="Monotype Corsiva" FontWeight="Bold"/>
+        <Label x:Name="Score" Height="40" Canvas.Left="400" Canvas.Top="-53" Width="150" FontSize="22" FontFamily="Monotype Corsiva" FontWeight="Bold"/>
+
+    </Canvas>
+
+</Window>
